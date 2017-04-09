@@ -1,5 +1,6 @@
 
- <!DOCTYPE HTML>
+  
+    <!DOCTYPE HTML>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
@@ -24,9 +25,9 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
-  <body>
-    <header>
-      <div>
+      <body>
+        <header>
+          <div>
 		
 			<div id="imglogo">
 				<a href="/"><img src="/img/logo.svg" alt="Jmwt&#39;s Blog" title="Jmwt&#39;s Blog"/></a>
@@ -64,68 +65,48 @@
 			</nav>			
 </div>
 
-    </header>
-    <div id="container">
-      <div id="main">
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/04/09/第一篇/" title="第一篇" itemprop="url">
-  
-    <h1 itemprop="name">第一篇</h1>
+        </header>
+        <div id="container">
+          <div id="main" class="page" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
     
-     
-           <p itemprop="description" >我从零开始的博客。。。嘿嘿</p>
-        
+      <a href="/abouts/index.html" title="" itemprop="url"></a>
+  </h1>
+  <p class="article-author">By
     
-    <time datetime="2017-04-09T08:03:46.000Z" itemprop="datePublished">2017-04-09</time>
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/04/09/hello-world/" title="Hello World" itemprop="url">
-  
-    <h1 itemprop="name">Hello World</h1>
+      <a href="http://cetro.top" title="jmwt">jmwt</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2017-04-09T10:17:40.204Z" itemprop="datePublished">2017-04-09</time>
+    更新日期:<time datetime="2017-04-09T10:17:36.781Z" itemprop="dateModified">2017-04-09</time>
     
-     
-           <p itemprop="description" >Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the </p>
-        
-    
-    <time datetime="2017-04-08T16:55:08.011Z" itemprop="datePublished">2017-04-09</time>
-  </a>
-</section>
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		  
+	</div>
+		<footer class="article-footer clearfix">
 
 
-</div>
-      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
-<div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
-<aside class="clearfix">
 
-  
+<div class="article-share" id="share">
 
-  
-  <div class="archiveslist">
-    <p class="asidetitle"><a href="/archives">归档</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">2</span></li></ul>
+  <div data-url="http://cetro.top/abouts/index.html" data-title="Jmwt&#39;s Blog" data-tsina="null" class="share clearfix">
   </div>
 
-
-  
-  <div class="tagcloudlist">
-    <p class="asidetitle">标签云</p>
-    <div class="tagcloudlist clearfix">
-       <a href="/tags/哈哈/" style="font-size: 10px;">哈哈</a> <a href="/tags/嘿嘿/" style="font-size: 10px;">嘿嘿</a>
-    </div>
-  </div>
-
-
-</aside>
 </div>
-    </div>
-    <footer><div id="footer" >
+</footer>   	       
+	</article>
+	
+	
+</div>  
+        </div>
+        <footer><div id="footer" >
 	
 	<div class="line">
 		<span></span>
@@ -147,7 +128,7 @@
 		</p>
 </div>
 </footer>
-    <script src="/js/jquery-2.1.0.min.js"></script>
+        <script src="/js/jquery-2.1.0.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){ 
   $('.navbar').click(function(){
@@ -194,10 +175,39 @@ $(document).ready(function(){
 </script>
 
 
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
 
 
 
 
 
-  </body>
- </html>
+
+      </body>
+     </html>
+     
